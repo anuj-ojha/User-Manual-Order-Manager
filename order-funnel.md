@@ -163,5 +163,3 @@ Hovering over any segment highlights it and dims the others, allowing for easy c
 The Fulfillment Sync Settings panel is only visible when the selected facility has a configured active pick profile. If no pick profile exists for the facility, this section does not appear.
 
 ---
-
-*Back to [README →](../README.md)*

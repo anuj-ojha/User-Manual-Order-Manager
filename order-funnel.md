@@ -3,9 +3,9 @@
 
 ## Overview
 
-The Order Funnel is the **home page** of Order Manager and serves as the primary operational dashboard for monitoring the health and performance of the order fulfillment process. It consolidates data from across the organization into a single view, enabling managers and operations teams to quickly identify where orders are progressing smoothly, where bottlenecks are forming, and which areas require immediate attention.
+The Order Funnel is the home page of Order Manager App. It brings together order data from across all facilities into a single view, so operations teams and store managers can quickly see where orders are progressing, where fulfillment is delayed, and which areas need immediate action.
 
-The page displays data scoped to the currently active **product store**, which is shown at the top of the page next to a globe icon. All figures on this page reflect orders associated with that product store.
+The page displays data scoped to the currently active product store, shown at the top of the page next to a globe icon. All figures on this page reflect orders associated with that product store.
 
 ---
 

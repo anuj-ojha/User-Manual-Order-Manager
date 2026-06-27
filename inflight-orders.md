@@ -1,8 +1,4 @@
 # Inflight Orders
-
-**Navigation:** ☰ Menu → Inflight Orders  
-**Route:** `/inflight`
-
 ---
 
 ## Overview
@@ -60,8 +56,6 @@ The following filters are available:
 
 Filters for Priority, Channel, Facility, Shipment Method, Order Date From, and Order Date Thru trigger an immediate reload of the list when changed.
 
-Filters for the main search query and Customer Name apply after a brief 300-millisecond delay to reduce the number of API requests while the user is typing.
-
 Clicking **Clear** resets all filters to their default values and reloads the full list.
 
 > **Important:** When navigating to this page directly from the Order Funnel by clicking a facility's in-progress count, the Facility filter is automatically pre-set to that facility's ID.
@@ -95,18 +89,7 @@ After the action runs, a brief notification (toast) appears at the top of the sc
 
 ---
 
-## Navigating to an Order
-
-In Normal Mode, clicking any order row navigates to the **Inflight Order Detail** page at the route `/inflight/:orderId`.
-
-In Select Mode, clicking a row toggles its checkbox selection instead of navigating.
-
----
-
 ## When Does an Order Leave This List?
 
 An order leaves the Inflight Orders list when it has been **packed**. At that point, it transitions to the Packed Orders queue, where it awaits carrier pickup.
 
----
-
-*Back to [README →](../README.md)*

@@ -1,8 +1,4 @@
 # Order Funnel
-
-**Navigation:** ☰ Menu → Order Funnel  
-**Route:** `/`
-
 ---
 
 ## Overview

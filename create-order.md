@@ -1,21 +1,16 @@
 # Create Order
-
-**Navigation:** ☰ Menu → Create Order  
-**Route:** `/create-order`
-
 ---
-
 ## Overview
 
 The Create Order page enables authorized users to **manually create a new sales order** directly within Order Manager and submit it to Shopify. This feature is intended for scenarios that fall outside normal e-commerce workflows — such as placing an order on behalf of a customer during a phone or in-store interaction, correcting a missed order, or creating a replacement shipment.
 
 Orders created through this page are submitted to Shopify via the OMS API (`POST oms/orders/shopify`) and, upon successful creation, enter the standard fulfillment pipeline alongside all other orders.
 
-The page is laid out in a two-column format on larger screens: a **left panel** for order configuration (shop assignment, customer, address, notes, and tags) and a **main content area** on the right for adding and managing line items.
+The page is laid out in a two-column format on larger screens: a left panel for order configuration (shop assignment, customer, address, notes, and tags) and a on the right panel for adding and managing line items.
 
 ---
 
-## Step 1: Configure the Order (Left Panel)
+## Step 1: Configure the Order
 
 Before adding products, configure the following settings in the left panel.
 
@@ -33,17 +28,16 @@ This section controls the organizational and fulfillment context for the new ord
 
 ### Customer
 
-This section captures the customer associated with the order. Click **"Add"** (or **"Edit"** if a customer is already selected) to open the **Add Customer Modal**, where you can search for an existing Shopify customer by name or email.
+This section captures the customer associated with the order. Click Add to open the Add Customer panel, or Edit if a customer is already selected.
+Search for an existing customer by entering their details. If the customer does not exist, a new record can be created by providing the following information:
 
-Upon selecting a customer, the following information is populated from Shopify and displayed on the panel:
-
-- First name and last name
+- First and last name
 - Phone number
 - Email address
 
-> **Note:** The Add Customer Modal requires a Shopify shop to be selected first, as the customer lookup is scoped to the customers in that shop.
+Once a customer is selected, the above details are automatically populated from Shopify, and their default shipping address is pre-filled in the Shipping Address section.
 
-When a customer is selected, their default shipping address from Shopify is also automatically pre-filled in the Shipping Address section.
+> **Note:** The Add Customer panel requires a Shopify shop to be selected first, as the customer lookup is scoped to that shop's records.
 
 ### Notes
 
@@ -67,13 +61,12 @@ Captures the destination shipping address for the order. Click **"Add"** (or **"
 | Country | **Yes** |
 | Phone | No |
 
-Once saved, the entered address is displayed in the left panel for review.
+Once saved, the entered address is displayed in the panel for review.
 
 ---
 
-## Step 2: Add Line Items (Main Content Area)
-
-The main content area is where you add products to the order. There are three ways to add items.
+## Step 2: Add Line Items
+There are three ways to add items.
 
 ### Method 1 — Barcode Scan
 
@@ -90,7 +83,7 @@ The input field displays the currently active barcode identifier type as placeho
 
 Select the **magnifying glass icon** segment button to switch to Search mode. A search bar appears.
 
-1. Type a product name, SKU, or UPC. The system begins searching automatically after a brief pause (approximately 800 ms).
+1. Type a product name, SKU, or UPC. The system begins searching automatically.
 2. The first matching result is displayed with its product image and name.
 3. If the product is **not yet in the order**, an **"Add"** button appears. Click it to add the product as a line item.
 4. If the product is **already in the order**, a green checkmark is shown instead of the Add button.
@@ -123,24 +116,9 @@ Once items are added, they appear in the order list below the Add Items card. Fo
 
 ---
 
-## Order Summary (Payment Card)
-
-When at least one line item has been added, a **Payment summary card** appears below the line items showing:
-
-| Field | Value |
-|---|---|
-| **Subtotal** | Sum of all line item prices × quantities |
-| **Shipping** | $10.00 for orders under $150; $0.00 (free shipping) for orders $150 and above |
-| **Tax** | Displayed as "Not calculated" — tax is not computed within this form |
-| **Total** | Subtotal + Shipping, rounded to two decimal places |
-
-All monetary values are displayed in US dollars (USD) regardless of the currency selected in the Assign panel.
-
----
-
 ## Submitting the Order
 
-When the order is ready, click the **checkmark button** (☑) at the bottom-right corner of the screen (a floating action button) to submit the order.
+When the order is ready, click the **checkmark button** at the bottom-right corner of the screen (a floating action button) to submit the order.
 
 Before submitting, the system validates the following fields in sequence. If any check fails, a notification is shown and submission is stopped:
 
@@ -157,9 +135,3 @@ Before submitting, the system validates the following fields in sequence. If any
 If all validations pass, the form data is sent to the OMS API. Upon a successful response:
 - A success notification ("Shopify Order Created Successfully!") is shown.
 - The order form is reset, retaining only the selected Shopify shop and product store.
-
-If the submission fails (e.g. due to a network error or an invalid API response), an error notification is displayed with the relevant error message.
-
----
-
-*Back to [README →](../README.md)*

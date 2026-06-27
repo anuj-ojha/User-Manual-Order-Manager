@@ -1,8 +1,4 @@
 # Find Orders
-
-**Navigation:** ☰ Menu → Find Orders  
-**Route:** `/orders`
-
 ---
 
 ## Overview
@@ -21,7 +17,7 @@ Each result row in the list represents a single order and displays the following
 
 | Field | Description |
 |---|---|
-| **External ID / Order name** | Displayed as the main heading on the row (e.g. the Shopify order name such as `#1023`). Falls back to the internal order ID if no external ID is present. |
+| **External ID / Order name** | Displayed as the main heading on the row (e.g. the Shopify order name such as `HCDEV#4643`). Falls back to the internal order ID if no external ID is present. |
 | **Internal Order ID** | Displayed on the second line alongside the customer name |
 | **Customer name** | The full name of the customer, or their customer ID. Displays "Unknown customer" if neither is available. |
 | **Created date label** | Shows how long ago the order was placed. For orders placed today, shows a relative label such as "Created 3h ago" or "Created less than 1h ago." For older orders, shows the date in medium format (e.g. "Created Jun 15, 2025"). |
@@ -34,7 +30,7 @@ The results summary in the list header shows the loaded count versus total resul
 
 ## Search and Filtering
 
-A search and filter panel is available at the top of the page. The main search bar accepts free-text queries and is matched against: order name, external ID, customer name, and email. Search results update automatically after a brief 300-millisecond delay as you type.
+A search and filter panel is available at the top of the page. The main search bar accepts free-text queries and is matched against: order name, external ID, customer name, and email. Search results update dynamically as you type.
 
 The following additional filters are available:
 
@@ -46,16 +42,13 @@ The following additional filters are available:
 | **Channel** | All channels / individual sales channels | Filters by the sales channel through which the order was placed |
 | **Sort by order date** | Newest first (default) / Oldest first | Controls the sort order of results. "Newest first" uses `orderDate desc`; "Oldest first" uses `orderDate asc`. |
 
-Changing Status, Channel, Date From, Date Thru, or Sort triggers an immediate reload. The main text search applies after the 300 ms debounce.
-
 Clicking **Clear** resets all filters — including the search query, status selections, dates, channel, sort direction, and any custom selections — back to their defaults, and re-scopes results to the current product store.
 
 ---
 
 ## Select Mode and Bulk Actions
 
-The **"Select" button** appears in the list header only when the logged-in user has at least one of the required permissions (`ORDER_CANCEL_PERMISSION`, `ORDER_UPDATE_PERMISSION`, or `ORDER_TASK_CREATE_PERMISSION`). If the user has none of these permissions, the Select button is not shown.
-
+The **"Select" button** appears in the list header 
 ### Entering Select Mode
 
 Click **"Select"** to enter Select Mode. The button changes to **"Done"** while in this mode.
@@ -73,11 +66,11 @@ Click **"Done"** to exit Select Mode. All selections are cleared.
 
 Each action button is shown in the footer toolbar but is **individually disabled** if the logged-in user lacks the required permission for that specific action.
 
-| Action | Permission Required | Description | Confirmation |
-|---|---|---|---|
-| **Cancel open items** | `ORDER_CANCEL_PERMISSION` (`ORD_SALES_ORDER_CNCL` or `ORDERMGR_ADMIN`) | Cancels all open (unfulfilled) line items for each selected order. This action cannot be undone. | Yes — a confirmation dialog is shown before the action executes. |
-| **Edit shipping method** | `ORDER_UPDATE_PERMISSION` (`ORDERMGR_UPDATE` or `ORD_SALES_ORDER_EDIT` or `ORDERMGR_ADMIN`) | Changes the shipping carrier and shipment method type for all selected orders. A modal opens to choose the new carrier and method. | No |
-| **Add task** | `ORDER_TASK_CREATE_PERMISSION` (`ORD_CRT_EVENT_VIEW` or `COMM_EVNT_MENU_VIEW` or `ORDERMGR_ADMIN`) | Opens a modal to create a new order task (such as a hold or investigation) on all selected orders. | No |
+| Action | Description | Confirmation |
+|---|---|---|
+| **Cancel open items** |  Cancels all open (unfulfilled) line items for each selected order. This action cannot be undone. | Yes — a confirmation dialog is shown before the action executes. |
+| **Edit shipping method** | Changes the shipping carrier and shipment method type for all selected orders. A modal opens to choose the new carrier and method. | No |
+| **Add task** | Opens a modal to create a new order task (such as a hold or investigation) on all selected orders. | No |
 
 After each action:
 - A toast notification confirms the outcome.
@@ -97,7 +90,3 @@ In Select Mode, clicking a row toggles its checkbox selection.
 ## Infinite Scroll
 
 When more results exist than the current loaded set, additional orders are appended automatically as you scroll to the bottom of the list.
-
----
-
-*Back to [README →](../README.md)*

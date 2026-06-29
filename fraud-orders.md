@@ -1,13 +1,8 @@
 # Fraud Orders
 
-**Navigation:** ☰ Menu → Fraud Orders  
-**Route:** `/fraud`
-
----
-
 ## Overview
 
-The Fraud Orders page manages sales orders that have been **flagged as potentially fraudulent** by the Order Management System or an integrated risk-assessment service. These orders are placed on hold and require a member of the operations team to review the risk information and decide whether to release the order for fulfillment or cancel it.
+The Fraud Orders page manages sales orders that have been **flagged as potentially fraudulent** by the Order Management System or an integrated risk-assessment service. These orders are placed on hold for review the risk information and decide whether to release the order for fulfillment or cancel it.
 
 Each entry on this page is a **work effort task** (referred to as a "fraud task") associated with a specific order. The task carries metadata from the fraud risk evaluation, including a risk level (severity) and a recommendation from the risk system, which the reviewer uses to make an informed decision.
 
@@ -32,7 +27,7 @@ Each task is displayed as a **Fraud Task Card**. Each card shows:
 
 This page supports **selecting multiple tasks simultaneously** for bulk operations.
 
-A **"Select All"** toggle (`SelectAllResultsItem`) appears at the top of the list when tasks are present. Toggling it selects or deselects all currently loaded tasks. Individual tasks can also be selected or deselected via their checkbox.
+A **"Select All"** toggle appears at the top of the list when tasks are present. Toggling it selects or deselects all currently loaded tasks. Individual tasks can also be selected or deselected via their checkbox.
 
 When at least one task is selected, a **footer toolbar** appears at the bottom of the screen with two actions:
 
@@ -40,11 +35,6 @@ When at least one task is selected, a **footer toolbar** appears at the bottom o
 |---|---|---|
 | **Resolve** | Releases the fraud hold on all selected orders, allowing them to proceed through the fulfillment workflow. | No — the action executes immediately for all selected cards. |
 | **Cancel orders** | Permanently cancels all selected orders. This action cannot be undone. | Yes — a confirmation dialog shows the count of orders to be cancelled before proceeding. |
-
-After a bulk action completes:
-- Selections are cleared.
-- The "Select All" toggle is reset to off.
-- The task list is refreshed automatically.
 
 If any task fails during a bulk operation, an error toast notification is displayed.
 
@@ -63,16 +53,5 @@ The following additional filters are available:
 | **Recommendation** | All recommendations / individual risk recommendation values | Filters by the fraud recommendation classification (e.g. Accept, Reject, Review). Values are sourced from the `ORDER_RISK_RECOMMENDATION` enumeration. |
 | **Severity** | All severity / individual risk level values | Filters by the fraud risk severity level (e.g. High, Medium, Low). Values are sourced from the `ORDER_RISK_LEVEL` enumeration. |
 
-Changing Assignee, Channel, Recommendation, or Severity immediately reloads the task list. The search query is applied only when the search button is explicitly pressed.
-
 Clicking **Clear** resets all filters and reloads the full list.
 
----
-
-## Infinite Scroll
-
-When there are more tasks than can be displayed on the current page, additional tasks are loaded automatically as you scroll to the bottom of the list.
-
----
-
-*Back to [README →](../README.md)*

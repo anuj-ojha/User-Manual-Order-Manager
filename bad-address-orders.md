@@ -1,15 +1,11 @@
 # Bad Address Orders
-
-**Navigation:** ☰ Menu → Bad Address Orders  
-**Route:** `/bad-address`
-
 ---
 
 ## Overview
 
 The Bad Address Orders page manages sales orders that are currently **on hold because the shipping address could not be verified** by the address validation system. These orders cannot proceed to fulfillment until the address issue is resolved — either by correcting the address, accepting a system-suggested correction, cancelling the order, or temporarily moving it to a parking facility.
 
-Each entry on this page is a **work effort task** (referred to as an "address validation task") associated with a specific order. The system may have generated a suggested corrected address based on external validation services, which the operator can review and accept, or the operator may manually enter a corrected address.
+Each entry on this page is a **work effort task** (referred to as an "address validation task") associated with a specific order. The system may have generated a suggested corrected address based on external validation services, which the CSR can review and accept, or the CSR may manually enter a corrected address.
 
 The page reloads its task list each time it becomes the active view.
 
@@ -44,11 +40,6 @@ When at least one task is selected, a **footer toolbar** appears at the bottom o
 | **Cancel Order** | Permanently cancels all selected orders. This action cannot be undone. | Yes — a confirmation dialog warns that the action is irreversible. |
 | **Park** | Moves the selected orders to a chosen virtual parking facility. A **Facility Modal** opens for the operator to select the destination parking facility from the available options. | No |
 
-After a bulk action completes:
-- Selections are cleared.
-- The "Select All" toggle is reset.
-- The task list is refreshed.
-
 ---
 
 ## Search and Filtering
@@ -69,11 +60,3 @@ Changing Assignee, Channel, Date after, or Date before immediately reloads the t
 Clicking **Clear** resets all filters and reloads the full list.
 
 ---
-
-## Infinite Scroll
-
-When there are more tasks than can be displayed on the current page, additional tasks are loaded as you scroll to the bottom of the list.
-
----
-
-*Back to [README →](../README.md)*

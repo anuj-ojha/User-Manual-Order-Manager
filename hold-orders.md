@@ -1,10 +1,5 @@
 # Hold Orders
 
-**Navigation:** ☰ Menu → Hold Orders  
-**Route:** `/hold`
-
----
-
 ## Overview
 
 The Hold Orders page displays sales orders that have been **placed on hold for general operational reasons** — that is, reasons that are not specifically a bad shipping address, fraud risk, or substitution requirement (those are handled by their respective dedicated pages). Examples include manual holds applied by customer service teams, compliance holds, or custom workflow holds created via the order task system.
@@ -40,11 +35,6 @@ When at least one task is selected, a **footer toolbar** appears at the bottom o
 |---|---|---|
 | **Resolve** | Resolves the hold on all selected tasks, releasing those orders back into the fulfillment workflow. | Yes — a confirmation dialog shows the count of selected tasks before proceeding. |
 
-After the Resolve action completes:
-- Selections are cleared.
-- The "Select All" toggle is reset to off.
-- The task list is refreshed automatically.
-
 ---
 
 ## Search and Filtering
@@ -60,22 +50,8 @@ The following additional filters are available:
 | **Order date before** | Date picker | Shows only tasks associated with orders placed on or before the selected date |
 | **Channel** | All channels / individual sales channels | Filters tasks by the sales channel of the originating order |
 
-Changing Assignee, Channel, Order date after, or Order date before immediately reloads the task list. The main search query is applied only when the search button is explicitly pressed.
-
-Clicking **Clear** resets all filters (including the search query) and reloads the full list.
-
----
-
-## Infinite Scroll
-
-When more tasks exist than the current page can display, additional tasks are loaded automatically as you scroll to the bottom of the list.
-
 ---
 
 ## Relationship to the Order Funnel
 
 Hold Orders are visible on the Order Funnel dashboard as part of the **Order Hold Tasks** summary card. The total count on the funnel includes holds of all types (Substitute/Swap, Bad Address, and Fraud Risk). The Hold Orders page shows only those hold tasks that do not fall into any of those three specific categories.
-
----
-
-*Back to [README →](../README.md)*

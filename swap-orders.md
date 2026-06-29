@@ -1,17 +1,11 @@
 # Swap Orders
-
-**Navigation:** ☰ Menu → Swap Orders  
-**Route:** `/swap`
-
 ---
 
 ## Overview
 
-The Swap Orders page manages orders that have been placed **on hold because one or more items are unavailable** at the assigned fulfillment facility and a substitute product has been proposed as a replacement. These orders appear here as work effort tasks (referred to throughout the system as "swap tasks") that require a member of the operations team to either approve the proposed substitute or take another action.
+The Swap Orders page manages orders that have been placed **on hold because one or more items are unavailable** at the assigned fulfillment facility and a substitute product has been proposed as a replacement. 
 
 Each task on this page represents an order where the system — or a facility associate — has identified that the originally ordered item cannot be fulfilled as requested, and has suggested a substitutable product as an alternative. Stock levels for proposed substitute products are fetched in real time from the inventory system when the page loads.
-
-The page reloads its task list each time it becomes the active view.
 
 ---
 
@@ -30,7 +24,7 @@ The card provides actions to either accept or reject the substitution.
 
 ## Search and Filtering
 
-A search and filter panel is available at the top of the page. The main search bar is matched against the order name. Pressing the search button (or pressing Enter) triggers the search.
+A search and filter panel is available at the top of the page. The main search bar is matched against the order name. Pressing the search button triggers the search.
 
 The following additional filters are available:
 
@@ -44,25 +38,3 @@ The following additional filters are available:
 Changing the Swappable toggle, Channel, Date after, or Date before filters triggers an automatic reload of the task list. A search query is applied only when the search button is explicitly pressed.
 
 Clicking **Clear** resets all filters and reloads the full task list.
-
----
-
-## Bulk Actions
-
-This page does not have a footer-level bulk action toolbar. Each swap task is acted upon **individually through its own task card**, which presents the available actions (approve substitute, reject, etc.) inline.
-
----
-
-## Infinite Scroll
-
-When there are more tasks than the current page can display, additional tasks are loaded automatically as you scroll to the bottom of the page.
-
----
-
-## Permissions
-
-Access to swap order actions is governed by the `SWAP_ORDER_PERMISSION`, which requires one of the following: `MOVE_SO_ITEM`, `ORDERMGR_UPDATE`, `ORD_SALES_ORDER_EDIT`, `ORD_SALES_ORDER_ADMIN`, or `ORDERMGR_ADMIN`.
-
----
-
-*Back to [README →](../README.md)*
